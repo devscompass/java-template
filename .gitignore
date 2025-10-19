@@ -1,0 +1,27 @@
+# build
+bin/
+dist/
+
+# eclipse
+.project
+.classpath
+.settings/
+
+# intellij
+.idea
+*.ipr
+*.iml
+*.iws
+
+# netbeans
+nb-configuration.xml
+
+# visual studio code
+.factorypath
+
+# osx
+.DS_Store
+
+# vim
+*.swp
+*.swo
