@@ -1,5 +1,6 @@
 # Java Template
 
+![Build](https://img.shields.io/github/actions/workflow/status/zbhavyai/java-template/build.yml?label=Build)
 ![License](https://img.shields.io/github/license/zbhavyai/java-template?label=License)
 
 A minimal starter template for writing plain Java applications. Ideal for learning the core features of the language, practicing coding exercises, or even building mini projects.
