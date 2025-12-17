@@ -28,7 +28,7 @@ define CHECK_DEPENDENCY
 endef
 
 .deps:
-	$(call CHECK_DEPENDENCY, java, javac, jar)
+	$(call CHECK_DEPENDENCY, java javac jar)
 
 clean:
 	@rm -rf $(CLS_DIR) $(DES_DIR)
