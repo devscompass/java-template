@@ -1,7 +1,6 @@
 # Java Template
 
-![Build](https://img.shields.io/github/actions/workflow/status/devscompass/java-template/build.yml?label=Build)
-![License](https://img.shields.io/github/license/devscompass/java-template?label=License)
+[![Build](https://github.com/devscompass/java-template/actions/workflows/build.yml/badge.svg)](https://github.com/devscompass/java-template/actions/workflows/build.yml)
 
 A minimal starter template for writing plain Java applications. Ideal for learning the core features of the language, practicing coding exercises, or even building mini projects.
 
