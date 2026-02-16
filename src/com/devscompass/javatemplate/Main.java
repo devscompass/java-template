@@ -1,4 +1,4 @@
-package io.github.zbhavyai.javatemplate;
+package com.devscompass.javatemplate;
 
 public class Main {
     public static void main(String[] args) throws Exception {
