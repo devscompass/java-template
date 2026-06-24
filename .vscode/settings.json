@@ -1,5 +1,9 @@
 {
-  "editor.codeActionsOnSave": { "source.organizeImports": "always", "source.addMissingImports": "always", "source.unusedImports": "always" },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.addMissingImports": "always",
+    "source.unusedImports": "always"
+  },
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "files.eol": "\n",
@@ -10,7 +14,6 @@
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": ["lib/**/*.jar"],
-  "java.saveActions.organizeImports": true,
   "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable",
   "redhat.telemetry.enabled": false,
   "[java]": { "editor.defaultFormatter": "redhat.java" },
