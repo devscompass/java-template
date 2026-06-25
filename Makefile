@@ -1,4 +1,4 @@
-.PHONY: clean compile package run run-jar help
+.PHONY: help clean compile package run run-jar
 
 SRC_DIR := src
 LIB_DIR := lib
@@ -30,11 +30,15 @@ endef
 .deps:
 	$(call CHECK_DEPENDENCY, java javac jar)
 
-clean:
+help: ## show this help message
+	@echo "Available targets:"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-10s - %s\n", $$1, $$2}'
+
+clean: ## clean build artifacts
 	@rm -rf $(CLS_DIR) $(DES_DIR)
 	@echo "[INFO] Cleaned build artifacts.";
 
-compile: .deps
+compile: .deps ## compile app
 	@if [ -d "$(LIB_DIR)" ] && [ "$$(ls -A $(LIB_DIR))" ]; then \
 		javac -d $(CLS_DIR) -cp "$(LIB_DIR)/*" $$(find $(SRC_DIR) -name "*.java"); \
 	else \
@@ -42,23 +46,14 @@ compile: .deps
 	fi
 	@echo "[INFO] Compiled source files into '$(CLS_DIR)'."
 
-package: compile
+package: compile ## package app into JAR
 	@jar --create --file $(DES_DIR)/app.jar --main-class=$(MAIN_CLASS) -C $(CLS_DIR) .
 	@echo "[INFO] Packaged application into '$(DES_DIR)/app.jar'."
 
-run: compile
+run: compile ## run the compiled app
 	@echo "[INFO] Running application..."
 	@java -cp "$(CLS_DIR):$(LIB_DIR)/*" $(MAIN_CLASS)
 
-run-jar: package
+run-jar: package ## run the app JAR
 	@echo "[INFO] Running '$(DES_DIR)/app.jar'..."
 	@java -jar $(DES_DIR)/app.jar
-
-help:
-	@echo "Available targets:"
-	@echo "  clean             - Clean compiled and packaged files"
-	@echo "  compile           - Compile source code"
-	@echo "  package           - Package compiled files into a JAR"
-	@echo "  run               - Run the application from compiled classes"
-	@echo "  run-jar           - Run the application from the packaged JAR"
-	@echo "  help              - Show this help message"
