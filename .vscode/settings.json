@@ -14,7 +14,7 @@
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": ["lib/**/*.jar"],
-  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable",
+  "java.jdt.ls.vmargs": "-Xmx1G -Xms100m",
   "redhat.telemetry.enabled": false,
   "[java]": { "editor.defaultFormatter": "redhat.java" },
   "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode", "editor.tabSize": 3 },
